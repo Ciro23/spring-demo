@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <p>
+        Hi,
+        <span sec:authentication="principal.username"></span>
+    </p>
+
+    <p>
+        Your authorities are:
+        <span sec:authentication="principal.authorities"></span>
+    </p>
+
+    <div sec:authorize="hasRole('ADMIN')">
+        <span>Pages for everyone:</span>
+        <a href="/students">
+            Students list
+        </a>
+        <span>, </span>
+        <a href="/courses">
+            Courses list
+        </a>
+    </div>
+
+    <div sec:authorize="hasRole('ADMIN')">
+        <span>Pages only for admins:</span>
+        <a href="/users">
+            Users list
+        </a>
+    </div>
+</body>
+</html>
