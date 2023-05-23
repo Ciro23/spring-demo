@@ -1,0 +1,1 @@
+I followed a course on Udemy about Spring and i created this project to test by myself some of the basic functionalities.
